@@ -46,7 +46,7 @@ public class Main {
         StudentView studentView = new StudentView();
         studentView.sendOnConsole(studentGroup);
 
-        TeacherService teacherService = new TeacherService();
+        TeacherView teacherService = new TeacherView();
         teacherService.sendOnConsole(teacherList);
     }
 }
