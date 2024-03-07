@@ -1,9 +1,6 @@
 package Lesson5.Service;
 
-import Lesson5.Data.Student;
-import Lesson5.Data.Teacher;
-import Lesson5.Data.Type;
-import Lesson5.Data.User;
+import Lesson5.Data.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +20,7 @@ public class DataService {
             userList.add(student);
         }
         else if(Type.TEACHER == type){
+
             Teacher teacher = new Teacher(firstName,secondName,lastName,dateB,id);
             userList.add(teacher);
         }
@@ -59,13 +57,44 @@ public class DataService {
         return userList;
     }
 
-    public List<User> getAllStudent(){
-        List<User> resultList = new ArrayList<>();
+    public List<Student> getAllStudent(){
+        List<Student> resultList = new ArrayList<>();
         for(User user : userList){
             if (user instanceof Student){
-                resultList.add(user);
+                resultList.add((Student) user);
             }
         }
         return resultList;
     }
+
+    public Teacher getTeacherByID(int separatorID) {
+        Teacher teacher=null;
+        for (User user : userList) {
+            if(user instanceof Teacher&& ((Teacher)user).getTeacherId()==separatorID){
+                teacher= (Teacher) user;
+                return teacher;
+            }
+        }
+        System.out.println("Not found(");
+        return teacher;
+    }
+    public StudyGroup createLessonGroup(int teacherForLessonId, List<Integer> studentForLessonId) {
+        Teacher teacherForLesson = null;
+        List<Student> studentsForLesson = new ArrayList<>();
+
+        //поиск учителя
+        for (User user : userList) {
+            if (user instanceof Teacher && ((Teacher) user).getTeacherId() == teacherForLessonId)
+                teacherForLesson = (Teacher) user;
+        }
+        //поиск студенов
+        for (User user : userList) {
+            for (Integer i : studentForLessonId) {
+                if (user instanceof Student && ((Student) user).getStudentId()==(i))
+                    studentsForLesson.add((Student) user);
+            }
+        }
+        return new StudyGroup(teacherForLesson, studentsForLesson);
+    }
+
 }
