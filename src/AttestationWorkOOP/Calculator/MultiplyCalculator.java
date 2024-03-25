@@ -6,6 +6,11 @@ public class MultiplyCalculator extends BasicCalculator {
         super(calculator);
     }
 
+    /**
+     * @param firstValue  Первое число для умножения.
+     * @param secondValue Второе число для умножения.
+     * @return Результат умножения {@code firstValue} на {@code secondValue}.
+     */
     @Override
     public Double calculate(Double firstValue, Double secondValue) {
         return firstValue * secondValue;

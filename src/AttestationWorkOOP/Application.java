@@ -18,6 +18,9 @@ public class Application {
 
     private Scanner sc = new Scanner(System.in);
 
+    /**
+     * Метод для запуска приложения
+     */
     public void start() {
 
         String operation;
@@ -35,6 +38,10 @@ public class Application {
 
     }
 
+    /**
+     * Метод вызывает автотесты, для проверки калькулятора
+     * @param test принимает объект класса Test
+     */
     public void startTest(Test test) {
         for (int i = 0; i < test.getArrTest().length; i++) {
             String operation = test.getArrTest()[i];
@@ -45,6 +52,11 @@ public class Application {
 
     }
 
+    /**
+     * Метод принимает строку и сравниевает её с триггерными словами,
+     * с помощью которых завершается выполнение программы.
+     * @param command Принимает строку для сравнения с триггерными словами.
+     */
     private void exitCommand(String command) {
         if (command.equalsIgnoreCase("exit") || command.equalsIgnoreCase("стоп")) {
             System.out.println("Выход из программы.");

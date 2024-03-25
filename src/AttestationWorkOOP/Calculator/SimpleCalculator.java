@@ -15,10 +15,10 @@ public class SimpleCalculator implements Calculator {
     String operator;
 
     /**
+     * Принимает строку, парсит её, проходит циклом по массиву с этой строкой,
+     * выполняя операции сложения, вычитания и деления.
      *
-     * @param stringOperation принимает строку, парсит её:  проходит циклом по массиву с этой  строки,
-     *                 выполняя операции сложения, вычитания,
-     *                  умножения и деления
+     * @param stringOperation Строка с операциями и операндами.
      * @return Возвращает результат выполнения операций.
      */
     public Double allOperation(String stringOperation) {
@@ -33,6 +33,13 @@ public class SimpleCalculator implements Calculator {
         return result;
     }
 
+    /**
+     * Метод принимает два числа и в зависимости от оператора вызывает соответствующий метод
+     * конкретного калькулятора для выполнения операции.
+     * @param firstValue Первое число для операции
+     * @param secondValue Второе число для операции
+     * @return Результат выполнения операции.
+     */
     public Double calculate(Double firstValue, Double secondValue) {
         switch (operator) {
             case ("+"):
@@ -52,9 +59,6 @@ public class SimpleCalculator implements Calculator {
         }
         return Double.NaN;
     }
-
-
-
 
 
 }

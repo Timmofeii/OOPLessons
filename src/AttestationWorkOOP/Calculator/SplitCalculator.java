@@ -6,6 +6,11 @@ public class SplitCalculator extends BasicCalculator {
         super(calculator);
     }
 
+    /**
+     * @param firstValue  Первое число для делния.
+     * @param secondValue Второе число для деления.
+     * @return Результат деления {@code firstValue} на {@code secondValue}.
+     */
     @Override
     public Double calculate(Double firstValue, Double secondValue) {
        if (secondValue==0){

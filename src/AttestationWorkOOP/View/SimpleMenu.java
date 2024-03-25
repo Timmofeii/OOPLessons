@@ -9,6 +9,10 @@ public class SimpleMenu implements Menu {
 
     }
 
+    /**
+     *
+     * @param result принимает число и выводит его в печать
+     */
     public void printResult(Double result) {
         System.out.println(" = " + result);
     }
