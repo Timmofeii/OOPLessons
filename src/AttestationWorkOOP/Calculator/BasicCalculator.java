@@ -2,29 +2,16 @@ package AttestationWorkOOP.Calculator;
 
 import AttestationWorkOOP.Calculator.Calculator;
 
-public class BasicCalculator implements Calculator {
-    BasicCalculator calculator;
- String operator;
-
-    public Double calculate(Double firstValue, Double secondValue) {
-        switch (operator) {
-            case ("+"):
-               return new AddCalculator(calculator).calculate(firstValue,secondValue);
+public abstract class BasicCalculator implements Calculator {
+    protected Calculator calculator;
 
 
-            case ("-"):
-                return new SubtractCalculator(calculator).calculate(firstValue,secondValue);
-            case ("*"):
-                return new MultiplyCalculator(calculator).calculate(firstValue,secondValue);
+    public BasicCalculator(Calculator calculator) {
+        this.calculator = calculator;
 
-            case ("/"):
-                return new SplitCalculator(calculator).calculate(firstValue,secondValue);
-
-
-        }
-        return Double.NaN;
     }
 
 
+    public abstract Double calculate(Double firstValue, Double secondValue);
 
 }

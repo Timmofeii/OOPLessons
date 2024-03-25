@@ -1,19 +1,19 @@
 package AttestationWorkOOP.Calculator;
 
-public class SplitCalculator implements Calculator {
-    private Calculator calculator;
+public class SplitCalculator extends BasicCalculator {
 
     public SplitCalculator(Calculator calculator) {
-        this.calculator = calculator;
+        super(calculator);
     }
 
     @Override
     public Double calculate(Double firstValue, Double secondValue) {
-        try {
+       if (secondValue==0){
+           System.out.println("На ноль делить не можно!");
+           return Double.NaN;
+       }
             return firstValue / secondValue;
-        } catch (MatchException e) {
-            System.out.println(e);
-            return Double.NaN;
-        }
+     
+
     }
 }

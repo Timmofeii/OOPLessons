@@ -1,8 +1,10 @@
 package AttestationWorkOOP.Calculator;
 
-public class SubtractCalculator implements Calculator {
+public class SubtractCalculator extends BasicCalculator {
+
 
     public SubtractCalculator(Calculator calculator) {
+        super(calculator);
     }
 
     @Override

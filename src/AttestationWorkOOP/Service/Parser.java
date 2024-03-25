@@ -1,4 +1,4 @@
-package AttestationWorkOOP;
+package AttestationWorkOOP.Service;
 
 
 import java.util.ArrayList;
@@ -43,7 +43,7 @@ public class Parser {
 
         }
         if (notCorrectData.size() > 0) {
-            System.out.println("Некорректные данные " + notCorrectData);
+            System.out.println(" Некорректные данные " + notCorrectData);
         }
 
         return parsArr;
@@ -58,7 +58,7 @@ public class Parser {
         try {
             return Double.parseDouble(value);
         }catch (NumberFormatException e){
-            System.out.println(e);
+
         }
 return Double.NaN;
 

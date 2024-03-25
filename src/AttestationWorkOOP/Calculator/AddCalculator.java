@@ -1,10 +1,10 @@
 package AttestationWorkOOP.Calculator;
 
-public class AddCalculator implements Calculator {
-    private Calculator calculator;
+public class AddCalculator extends BasicCalculator {
+
 
     public AddCalculator(Calculator calculator) {
-        this.calculator = calculator;
+        super(calculator);
     }
 
     @Override

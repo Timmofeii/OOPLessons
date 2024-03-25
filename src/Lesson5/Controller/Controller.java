@@ -11,7 +11,7 @@ import java.util.List;
 public class Controller {
     private final DataService service = new DataService();
     private final StudentView studentView = new StudentView();
-    private  final StudyGroupService studyGroupService= new StudyGroupService() ;
+    private final StudyGroupService studyGroupService = new StudyGroupService();
     private StudentGroupView studentGroupView = new StudentGroupView();
 
     public void createStudent(String firstName, String secondName,
@@ -21,7 +21,7 @@ public class Controller {
 
     public void getAllStudent() {
         List<Student> studentList = service.getAllStudent();
-        for (Student student  : studentList) {
+        for (Student student : studentList) {
             studentView.printOnConsole(student);
         }
     }
@@ -32,18 +32,19 @@ public class Controller {
     }
 
 
+    public StudyGroup createStudentGroupByID(int idTeacher, List<Integer> idStudentList) {
 
-
-    public StudyGroup createStudentGroupByID(int idTeacher,List<Integer>idStudentList) {
-
-       return service.createLessonGroup(idTeacher,idStudentList);
-
-    } public StudyGroup studentGroupByID(int TeacherID,List<Integer>StudentIDList) {
-
-        return studyGroupService.studyGroupById(TeacherID,StudentIDList,service);
+        return service.createLessonGroup(idTeacher, idStudentList);
 
     }
-    public void printGroupInfo(StudyGroup studyGroup){
+
+    public StudyGroup studentGroupByID(int TeacherID, List<Integer> StudentIDList) {
+
+        return studyGroupService.studyGroupById(TeacherID, StudentIDList, service);
+
+    }
+
+    public void printGroupInfo(StudyGroup studyGroup) {
         studentGroupView.printStudentGroup(studyGroup);
     }
 

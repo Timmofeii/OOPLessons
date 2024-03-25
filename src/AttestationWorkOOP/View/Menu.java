@@ -1,4 +1,4 @@
-package AttestationWorkOOP;
+package AttestationWorkOOP.View;
 
 public interface Menu {
     /**

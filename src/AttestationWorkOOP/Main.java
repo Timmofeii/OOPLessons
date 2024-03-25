@@ -1,13 +1,14 @@
 package AttestationWorkOOP;
 
-import AttestationWorkOOP.Calculator.Calculator;
 import AttestationWorkOOP.Calculator.SimpleCalculator;
+import AttestationWorkOOP.Service.Parser;
+import AttestationWorkOOP.View.SimpleMenu;
 
 public class Main {
     public static void main(String[] args) {
-        Calculator calculator= new SimpleCalculator();
-    Application app= new Application(calculator, new SimpleMenu());
-    app.start();
+
+        Application app = new Application(new SimpleCalculator(new Parser()), new SimpleMenu());
+        app.start();
     }
 
 }
